@@ -19,6 +19,7 @@ namespace ReverseAndNot
 {
     using System;
     using System.Collections;
+    using System.Linq;
 
     internal class Reverse_And_Not
     {
@@ -37,6 +38,9 @@ namespace ReverseAndNot
 
             // ----------Calling the method here-----------
             Console.WriteLine(doReverseAndNot(inputNumber));
+
+            //---------------BONUS----------------
+            Console.WriteLine("\nBONUS:\n" + bonus(inputNumber));
 
             Console.ReadLine();
         }
@@ -59,6 +63,14 @@ namespace ReverseAndNot
 
                 reversedStr += poppedChar;
             }
+
+            return reversedStr + str;
+        }
+
+        private static string bonus(int inputNum)
+        {
+            string str = inputNum.ToString();
+            string reversedStr = new string(str.Reverse().ToArray());
 
             return reversedStr + str;
         }
